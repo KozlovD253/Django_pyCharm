@@ -1,0 +1,92 @@
+[
+  {
+    "category": "дом",
+   "name": "комфорт 1",
+   "image": "products_images/product-1.img",
+   "short_desc": "стул",
+    "description": "какой то стул",
+    "price": "3000",
+    "quantity": "25"
+  },
+    {
+    "category": "дом",
+   "name": "комфорт 2",
+   "image": "products_images/product-2.img",
+   "short_desc": "стул",
+    "description": "какой то еще стул",
+    "price": "2800",
+    "quantity": "20"
+  },
+    {
+    "category": "дом",
+   "name": "комфорт 3",
+   "image": "products_images/product-3.img",
+   "short_desc": "стул",
+    "description": "какой то красивый стул",
+    "price": "3900",
+    "quantity": "10"
+  },
+    {
+    "category": "офис",
+   "name": "стандарт",
+   "image": "products_images/product-4.img",
+   "short_desc": "стул",
+    "description": "какой то стул для офиса",
+    "price": "300",
+    "quantity": "122"
+  },
+    {
+    "category": "офис",
+   "name": "премиум",
+   "image": "products_images/product-5.img",
+   "short_desc": "стул",
+    "description": "еще один какой то стул",
+    "price": "3003",
+    "quantity": "21"
+  },
+    {
+    "category": "офис",
+   "name": "ультра_премиум",
+   "image": "products_images/product-6.img",
+   "short_desc": "стул",
+    "description": "крутой какой то стул",
+    "price": "3002",
+    "quantity": "8"
+  },
+    {
+    "category": "модерн",
+   "name": "новинка",
+   "image": "products_images/product-7.img",
+   "short_desc": "стул",
+    "description": "диван",
+    "price": "30000",
+    "quantity": "25"
+  },
+    {
+    "category": "модерн",
+   "name": "большая новинка",
+   "image": "products_images/product-8.img",
+   "short_desc": "стул",
+    "description": "какой то стул",
+    "price": "6000",
+    "quantity": "25"
+  },
+    {
+    "category": "классика",
+   "name": "рим",
+   "image": "products_images/product-9.img",
+   "short_desc": "стул",
+    "description": "какой то стул",
+    "price": "2000",
+    "quantity": "25"
+  },
+    {
+    "category": "классика",
+   "name": "маракеш",
+   "image": "products_images/product-10.img",
+   "short_desc": "стул",
+    "description": "какой то стул",
+    "price": "5000",
+    "quantity": "25"
+  }
+]
