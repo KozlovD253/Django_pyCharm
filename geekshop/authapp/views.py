@@ -11,7 +11,7 @@ def login(request):
     if request.method == 'POST' and login_form.is_valid():
         username = request.POST['username']
         password = request.POST['password']
-        user = auth.authenticate(usernmae=username, password=password)
+        user = auth.authenticate(username=username, password=password)
         if user and user.is_active:
             auth.login(request, user)
             return HttpResponseRedirect(reverse('main'))
@@ -28,7 +28,6 @@ def logout(requst):
 
 
 def register(request):
-
     if request.method == 'POST':
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
         if register_form.is_valid():
@@ -45,16 +44,15 @@ def register(request):
 
 
 def edit(request):
-
     if request.method == 'POST':
         edit_form = ShopUserEditForm(request.POST, request.FILES, isinstance=request.user)
         if edit_form.is_valid():
             edit_form.save()
             return HttpResponseRedirect(reverse('auth:edit'))
     else:
-        edit_form =ShopUserEditForm(isinstance=request.user)
+        edit_form = ShopUserEditForm(isinstance=request.user)
 
-    content ={
+    content = {
         'title': 'редактирование',
         'edit_form': edit_form
     }
