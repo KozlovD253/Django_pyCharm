@@ -56,5 +56,4 @@ def edit(request):
         'title': 'редактирование',
         'edit_form': edit_form
     }
-
     return render(request, 'authapp/edit.html', content)
