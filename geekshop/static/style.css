@@ -309,7 +309,7 @@ html, body {
 .search {
 	display: block;
 	width: 23px;
-	height: 23px;	
+	height: 23px;
 	background-image: url(/static/img/search.png);
 	position: absolute;
 	top: 63px;
