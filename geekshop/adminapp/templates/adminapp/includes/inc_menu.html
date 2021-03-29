@@ -6,7 +6,7 @@
         <a class="{% if 'user' in request.resolver_match.url_name %}active{% endif %}" href="{% url 'adminapp:user_read' %}"> пользователи</a>
     </li>
     <li>
-        <a class="{% if 'category' in request.resolver_match.url_name or 'product' in request.resolver_match.url_name %}active{% endif %}" href="{% url 'adminapp:category_read' %}">
+        <a class="{% if 'category' in request.resolver_match.url_name or 'product' in request.resolver_match.url_name %}active{% endif %}" href="{% url 'adminapp:categories' %}">
             категории
             {% if category %}
                 : {{ category.name }}

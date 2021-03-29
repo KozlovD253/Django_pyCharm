@@ -19,16 +19,16 @@
     {% endblock %}
 </head>
 <body>
-    <div class="admin_container">
-        <div class="h2 text-center">
-            Админка
-        </div>
-        <div class="admin_menu">
-            {% include 'adminapp/includes/inc_menu.html' %}
-        </div>
-        {% block content %}
-        {% endblock %}
+<div class="admin_container">
+    <div class="h2 text-center">
+        Админка
     </div>
+    <div class="admin_menu">
+        {% include 'adminapp/includes/inc_menu.html' %}
+    </div>
+    {% block content %}
+    {% endblock %}
+</div>
 </body>
 </html>
 
