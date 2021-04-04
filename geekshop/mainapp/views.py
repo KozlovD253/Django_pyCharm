@@ -9,12 +9,6 @@ from basketapp.models import Basket
 from .models import Product, ProductCategory
 
 
-def get_basket(user):
-    if user.is_authenticated:
-        return Basket.objects.filter(user=user)
-    return []
-
-
 def get_hot_product():
     products_list = Product.objects.all()
     return random.sample(list(products_list), 1)[0]
@@ -30,14 +24,13 @@ def main(request):
 
     products = Product.objects.all()[:3]
 
-    content = {'title': title, 'products': products, 'basket': get_basket(request.user)}
+    content = {'title': title, 'products': products,}
     return render(request, 'mainapp/index.html', content)
 
 
 def products(request, pk=None):
     title = 'продукты'
     links_menu = ProductCategory.objects.filter(is_active=True)
-    basket = get_basket(request.user)
     page = request.GET.get('p', 1)
 
     if pk is not None:
@@ -66,7 +59,6 @@ def products(request, pk=None):
             'links_menu': links_menu,
             'category': category,
             'products': products_paginator,
-            'basket': basket,
         }
 
         return render(request, 'mainapp/products_list.html', content)
@@ -79,7 +71,6 @@ def products(request, pk=None):
         'links_menu': links_menu,
         'same_products': same_products,
         'hot_product': hot_product,
-        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/products.html', content)
 
@@ -87,7 +78,6 @@ def products(request, pk=None):
 def product(request, pk=None, page=1):
     title = 'продукты'
     links_menu = ProductCategory.objects.filter()
-    basket = get_basket(request.user)
 
     if pk is not None:
         if pk == 0:
@@ -111,7 +101,6 @@ def product(request, pk=None, page=1):
             'links_menu': links_menu,
             'category': category,
             'products': products_paginator,
-            'basket': basket,
         }
 
         return render(request, 'mainapp/products_list.html', content)
@@ -120,7 +109,6 @@ def product(request, pk=None, page=1):
 def contact(request):
     content = {
         'title': 'Контакты',
-        'basket': get_basket(request.user),
     }
 
     return render(request, 'mainapp/contact.html', content)
