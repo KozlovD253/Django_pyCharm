@@ -13,7 +13,8 @@ urlpatterns = [
     path('contact/', mainapp.contact, name='contact'),
     #path('control/', admin.site.urls, name='control'),
     path('admin/', include('adminapp.urls', namespace='admin')),
-    path('', include('social_django.urls', namespace='social'))
+    path('', include('social_django.urls', namespace='social')),
+    path('order/', include('ordersapp.urls', namespace='order'))
 ]
 
 if settings.DEBUG:

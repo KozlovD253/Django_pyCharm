@@ -1,7 +1,7 @@
 import datetime
 
 import requests
-
+from django.utils import timezone
 
 from social_core.exceptions import AuthForbidden
 
@@ -30,9 +30,17 @@ def save_user_profile(backend, user, response, *args, **kwargs):
 
     if data['bdate']:
         bdate = datetime.datetime.strptime(data['bdate'], '%d.%m.%Y').date()
-        age = datetime.datetime.now().date().year - bdate.year
+        age = timezone.now().date().year - bdate.year
         if age < 18:
             user.delete()
             raise AuthForbidden('social_core.backends.vk.VKOAuth2')
+        user.age = age
 
+    if data['photo_max']:
+        photo = requests.get(data['photo_max'])
+        if photo.status_code == 200:
+            photo_name = f'/users_avatars/{user.username}.jpg'
+            with open(f'media/{photo_name}', 'wb') as avatar:
+                avatar.write(photo.content)
+                user.avatar = photo_name
     user.save()
